@@ -3,6 +3,7 @@ import { Router } from "express";
 import { verifyJWT } from '../auth/JWTVerifyAdmin'
 
 import { loginAdminController } from '../useCases/Admin/LoginAdmin/'
+import { createAdminController } from '../useCases/Admin/CreateAdmin/'
 export class AdminRoutes {
     public router: Router
     public API_ROUTE: string
@@ -16,7 +17,7 @@ export class AdminRoutes {
             return loginAdminController.handle(request, response)
         });
         this.router.post(this.API_ROUTE + '/admin/', verifyJWT, (request, response, next) => {
-            response.json(request.body.adminObj)
+            return createAdminController.handle(request, response)
         });
 
     }

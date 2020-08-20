@@ -18,6 +18,7 @@ export class LoginAdminController {
             return response.status(201).json(resp);
         } catch (err) {
             return response.status(400).json({
+                error: true,
                 message: err.message || 'Unexpected error.'
             })
         }

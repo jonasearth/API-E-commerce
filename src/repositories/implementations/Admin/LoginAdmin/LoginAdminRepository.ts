@@ -1,17 +1,18 @@
 
-import { IAdminRepository } from "../IAdminRepository";
+import { AdminRepository } from "../AdminRepository";
 import { Admin } from "../../../../entities/Admin";
 import { AdminModel } from '../AdminModel'
-
-export class LoginAdminRepository implements IAdminRepository {
+import { encriptPass } from '../../../../utils/passwordCript'
+export class LoginAdminRepository extends AdminRepository {
 
 
     async login(email: string, password: string): Promise<Admin> {
+        const passwordEncript: string = encriptPass(password)
 
         const admin = await AdminModel.findAll({
             where: {
                 email,
-                password
+                password: passwordEncript
             },
             limit: 1
         });

@@ -1,13 +1,12 @@
 import { Router, Request } from "express";
-import { loginAdminController } from './useCases/Admin/LoginAdmin/'
+import { Routes } from './routes/index'
 const router = Router()
 const API_ROUTE = "/api"
 /**
  * Admin
  */
-router.post(API_ROUTE + '/admin/login', (request, response) => {
-    return loginAdminController.handle(request, response)
-});
 
+new Routes(router, API_ROUTE).init()
 
+console.log(router)
 export { router } 

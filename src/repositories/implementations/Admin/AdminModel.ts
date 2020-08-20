@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize'
-import { sequelize } from '../Sequelize/SequelizeInit'
+import { sequelize } from '../../mysql/Sequelize/SequelizeInit'
 
 const AdminModel = sequelize.define('Admin', {
     // Model attributes are defined here
@@ -13,10 +13,6 @@ const AdminModel = sequelize.define('Admin', {
         allowNull: false
     },
     email: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    username: {
         type: DataTypes.STRING,
         allowNull: false
     },

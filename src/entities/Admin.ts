@@ -2,10 +2,9 @@ import { uuid } from 'uuidv4'
 
 export class Admin {
 
-    public readonly id: string;
+    public id: string;
 
     public name: string;
-    public username: string;
     public email: string;
     public password: string;
 
@@ -14,6 +13,9 @@ export class Admin {
 
         if (!id) {
             this.id = uuid()
+        } else {
+            this.id = id
         }
+
     }
 }

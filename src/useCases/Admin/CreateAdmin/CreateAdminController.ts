@@ -19,7 +19,7 @@ export class CreateAdminController {
 
             const resp = await this.createAdminUseCase.execute(admin)
 
-            return response.status(201).json(resp);
+            return response.status(201).json({ error: false, data: resp });
         } catch (err) {
             return response.status(400).json({
                 error: true,

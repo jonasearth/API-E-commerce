@@ -15,9 +15,9 @@ export class LoginAdminController {
                 password
             })
 
-            return response.status(201).json(resp);
+            return response.status(200).json(resp);
         } catch (err) {
-            return response.status(400).json({
+            return response.status(401).json({
                 error: true,
                 message: err.message || 'Unexpected error.'
             })

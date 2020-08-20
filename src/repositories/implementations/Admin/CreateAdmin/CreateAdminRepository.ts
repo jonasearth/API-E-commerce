@@ -25,8 +25,7 @@ export class CreateAdminRepository extends AdminRepository {
                 password: passwordEncript,
                 email
             })
-            console.log(admin[0])
-            return admin[0]
+            return
         }
 
     }

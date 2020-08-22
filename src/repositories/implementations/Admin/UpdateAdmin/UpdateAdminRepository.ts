@@ -1,7 +1,6 @@
-
 import { AdminRepository } from "../AdminRepository";
-
 import { GetAdminRepository } from '../GetAdmin/GetAdminRepository'
+
 import { AdminModel } from '../AdminModel'
 
 
@@ -40,6 +39,4 @@ export class UpdateAdminRepository extends AdminRepository {
 
 
     }
-
-
 }

@@ -1,4 +1,5 @@
 import { DataTypes } from 'sequelize'
+
 import { sequelize } from '../../mysql/Sequelize/SequelizeInit'
 
 const AdminModel = sequelize.define('Admin', {

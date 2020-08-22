@@ -12,6 +12,9 @@ export class AdminRepository implements IAdminRepository {
     async update(email: string, name: string, id: string): Promise<any> {
         return
     }
+    async delete(id: string): Promise<boolean> {
+        return
+    }
     async getById(id: string): Promise<Admin> {
         return
     }

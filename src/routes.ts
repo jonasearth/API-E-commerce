@@ -8,5 +8,4 @@ const API_ROUTE = "/api"
 
 new Routes(router, API_ROUTE).init()
 
-console.log(router)
 export { router } 

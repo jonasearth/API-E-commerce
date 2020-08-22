@@ -5,6 +5,7 @@ import { verifyJWT } from '../auth/JWTVerifyAdmin'
 import { loginAdminController } from '../useCases/Admin/LoginAdmin/'
 import { createAdminController } from '../useCases/Admin/CreateAdmin/'
 import { updateAdminController } from '../useCases/Admin/UpdateAdmin/'
+import { deleteAdminController } from '../useCases/Admin/DeleteAdmin/'
 export class AdminRoutes {
     public router: Router
     public API_ROUTE: string
@@ -22,6 +23,9 @@ export class AdminRoutes {
         });
         this.router.put(this.API_ROUTE + '/admin/', verifyJWT, (request, response, next) => {
             return updateAdminController.handle(request, response)
+        });
+        this.router.delete(this.API_ROUTE + '/admin/', verifyJWT, (request, response, next) => {
+            return deleteAdminController.handle(request, response)
         });
 
     }

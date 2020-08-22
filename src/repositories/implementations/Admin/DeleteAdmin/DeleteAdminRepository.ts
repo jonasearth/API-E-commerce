@@ -9,8 +9,7 @@ export class DeleteAdminRepository extends AdminRepository {
                 id
             }
         })
-        console.log(admin)
-        return
+        return admin > 0 ? true : false
     }
 }
 

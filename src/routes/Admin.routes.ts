@@ -4,6 +4,7 @@ import { verifyJWT } from '../auth/JWTVerifyAdmin'
 
 import { loginAdminController } from '../useCases/Admin/LoginAdmin/'
 import { createAdminController } from '../useCases/Admin/CreateAdmin/'
+import { updateAdminController } from '../useCases/Admin/UpdateAdmin/'
 export class AdminRoutes {
     public router: Router
     public API_ROUTE: string
@@ -18,6 +19,9 @@ export class AdminRoutes {
         });
         this.router.post(this.API_ROUTE + '/admin/', verifyJWT, (request, response, next) => {
             return createAdminController.handle(request, response)
+        });
+        this.router.put(this.API_ROUTE + '/admin/', verifyJWT, (request, response, next) => {
+            return updateAdminController.handle(request, response)
         });
 
     }

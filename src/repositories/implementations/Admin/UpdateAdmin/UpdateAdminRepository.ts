@@ -1,5 +1,7 @@
 
 import { AdminRepository } from "../AdminRepository";
+
+import { GetAdminRepository } from '../GetAdmin/GetAdminRepository'
 import { AdminModel } from '../AdminModel'
 
 
@@ -7,26 +9,36 @@ export class UpdateAdminRepository extends AdminRepository {
 
 
     async update(email: string, name: string, id: string): Promise<any> {
+        const getAdminRepository = new GetAdminRepository()
+        const adminToUpdate = await getAdminRepository.getById(id)
 
-        const admin = await AdminModel.findAll({
-            where: {
-                email
-            },
-            limit: 1
-        });
-        if (admin.length === 1) {
-            throw new Error("Email já existe!")
+        if (adminToUpdate != null) {
+            let admin = null
+
+            if (adminToUpdate.email !== email) {
+                admin = await getAdminRepository.getByEmail(email)
+            }
+            if (admin != null) {
+                throw new Error("Email já existe!")
+            } else {
+                const admin = await AdminModel.update({
+                    name,
+                    email
+                }, {
+                    where: {
+                        id
+                    }
+                });
+                return (admin[0] > 0) ? true : false
+            }
         } else {
-            const admin = await AdminModel.update({
-                name,
-                email
-            }, {
-                where: {
-                    id
-                }
-            });
+
+            throw new Error("Admin não encontrado!")
         }
-        return admin
+
+
+
+
     }
 
 

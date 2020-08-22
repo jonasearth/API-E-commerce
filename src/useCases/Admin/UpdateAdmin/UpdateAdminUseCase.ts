@@ -12,8 +12,12 @@ export class UpdateAdminUseCase {
         } if (data.email.length < 6 || data.name.length < 6) {
             throw new Error("Todos os campos devem ter mais de 6 digitos!")
         }
-        await this.adminRepository.update(data.email, data.name, data.id)
-        return
+        if (await this.adminRepository.update(data.email, data.name, data.id))
+            return "Admin atualizado com sucesso!"
+        else
+            throw new Error("Altere algum dado para atualizar!")
+
+
 
     }
 }

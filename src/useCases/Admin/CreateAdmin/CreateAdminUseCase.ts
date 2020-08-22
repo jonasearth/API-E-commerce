@@ -13,7 +13,7 @@ export class CreateAdminUseCase {
             throw new Error("Todos os campos devem ter mais de 6 digitos!")
         }
         await this.adminRepository.create(data.email, data.password, data.name, data.id)
-        return
+        return "Admin criado com sucesso!"
 
     }
 }

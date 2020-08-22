@@ -12,4 +12,13 @@ export class AdminRepository implements IAdminRepository {
     async update(email: string, name: string, id: string): Promise<any> {
         return
     }
+    async getById(id: string): Promise<Admin> {
+        return
+    }
+    async getAll(): Promise<Array<Admin>> {
+        return
+    }
+    async getByEmail(email: string): Promise<Admin> {
+        return
+    }
 }

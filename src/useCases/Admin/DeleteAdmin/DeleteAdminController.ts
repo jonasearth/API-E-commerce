@@ -9,6 +9,9 @@ export class DeleteAdminController {
 
     async handle(request: Request, response: Response): Promise<Response> {
         try {
+            if (request.body.adminObj.id === request.body.id) {
+                throw new Error("Você não pode remover seu registro!")
+            }
             const resp = await this.deleteAdminUseCase.execute({ id: request.body.id })
             return response.status(201).json({ error: false, data: resp });
         } catch (err) {

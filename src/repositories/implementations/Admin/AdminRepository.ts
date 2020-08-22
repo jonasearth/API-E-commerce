@@ -9,7 +9,7 @@ export class AdminRepository implements IAdminRepository {
     async login(email: string, password: string): Promise<Admin> {
         return
     }
-    async update(email: string, password: string, name: string, id: string): Promise<any> {
+    async update(email: string, name: string, id: string): Promise<any> {
         return
     }
 }

@@ -1,8 +1,8 @@
-import { CreateAdminRepository } from "../../../repositories/implementations/Admin/CreateAdmin/CreateAdminRepository";
+import { AdminRepository } from "../../../repositories/implementations/Admin/AdminRepository";
 import { CreateAdminUseCase } from "./CreateAdminUseCase";
 import { CreateAdminController } from "./CreateAdminController";
 
-const createAdminRepository = new CreateAdminRepository()
+const createAdminRepository = new AdminRepository()
 
 
 const createAdminUseCase = new CreateAdminUseCase(

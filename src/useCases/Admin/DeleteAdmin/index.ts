@@ -1,8 +1,8 @@
-import { DeleteAdminRepository } from "../../../repositories/implementations/Admin/DeleteAdmin/DeleteAdminRepository";
+import { AdminRepository } from "../../../repositories/implementations/Admin/AdminRepository";
 import { DeleteAdminUseCase } from "./DeleteAdminUseCase";
 import { DeleteAdminController } from "./DeleteAdminController";
 
-const deleteAdminRepository = new DeleteAdminRepository()
+const deleteAdminRepository = new AdminRepository()
 
 
 const deleteAdminUseCase = new DeleteAdminUseCase(

@@ -1,8 +1,8 @@
-import { UpdateAdminRepository } from "../../../repositories/implementations/Admin/UpdateAdmin/UpdateAdminRepository";
+import { AdminRepository } from "../../../repositories/implementations/Admin/AdminRepository";
 import { UpdateAdminUseCase } from "./UpdateAdminUseCase";
 import { UpdateAdminController } from "./UpdateAdminController";
 
-const updateAdminRepository = new UpdateAdminRepository()
+const updateAdminRepository = new AdminRepository()
 
 
 const updateAdminUseCase = new UpdateAdminUseCase(

@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { Admin } from '../../../entities/Admin'
 import { DeleteAdminUseCase } from "./DeleteAdminUseCase";
 
 export class DeleteAdminController {

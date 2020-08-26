@@ -10,7 +10,6 @@ export class Admin {
 
     constructor(props: Omit<Admin, 'id'>, id?: string) {
         Object.assign(this, props);
-
         if (!id) {
             this.id = uuid()
         } else {
